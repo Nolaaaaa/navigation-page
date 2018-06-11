@@ -1,7 +1,7 @@
 *{margin: 0; padding: 0;}
 a{text-decoration: none;}
 body{
-    background: rgba(214, 211, 205) url("./image/background.jpg") no-repeat center center;   /*除背景外还设置一个背景颜色的作用时使文档在图片加载完成之前不至于单调*/
+    background: rgba(214, 211, 205) url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-572085.jpg") no-repeat center center;   /*除背景外还设置一个背景颜色的作用时使文档在图片加载完成之前不至于单调*/
     background-size: cover;   /*图片自适应*/
     
 }
