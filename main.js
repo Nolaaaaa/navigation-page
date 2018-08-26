@@ -39,18 +39,18 @@ window.onload=function(){
             main=document.getElementById('main')
             div.className='row';
             main.appendChild(div)
-        var row=keys[index]   //row[1]第一个数组 row[2]第二个数组 row[3]第三个数组
-        for(var index2=0;index2<row['length'];index2=index2+1){
-            var span=createSpan(row[index2])
-            var botton=createButton(keys[index][index2])  //直接用row[index2] 为什么不行？
-            var img=createImage(hash[row[index2]])
-            var kbd=tag('kbd');       //创建kbd
-            kbd.className='key';
-            kbd.appendChild(span);
-            kbd.appendChild(img) 
-            kbd.appendChild(botton)          //将botton中放到kbd中
-            div.appendChild(kbd)          //将kbd中放到div
-        }
+            var row=keys[index]   //row[1]第一个数组 row[2]第二个数组 row[3]第三个数组
+            for(var index2=0;index2<row['length'];index2=index2+1){
+                var span=createSpan(row[index2])
+                var botton=createButton(keys[index][index2])  //直接用row[index2] 为什么不行？
+                var img=createImage(hash[row[index2]])
+                var kbd=tag('kbd');       //创建kbd
+                kbd.className='key';
+                kbd.appendChild(span);
+                kbd.appendChild(img) 
+                kbd.appendChild(botton)          //将botton中放到kbd中
+                div.appendChild(kbd)          //将kbd中放到div
+            }
         }
     }
     function listenToUser(hash){
@@ -78,7 +78,7 @@ window.onload=function(){
                 var key=bottontarget['id']   //拿到用户点击的按钮
                 var x=prompt('请输入一个网址')     //放网址的地方
                 hash[key]=x            //把这个值赋值给hash[key]
-                localStorage.setItem('aaa',JSON.stringify(hash))  
+                localStorage.setItem('aaa',window.JSON.stringify(hash))  
                 console.log(x)
                 //这个API只能存字符串，但是hash不是字符串，所以可以用JSON.stringify(hash)把它变成字符串
                 //在谷歌浏览器的application下的localStorage中可以看到
@@ -92,7 +92,7 @@ window.onload=function(){
             return botton
     }
     function getFromlocalStorage(name){
-        return JSON.parse(localStorage.getItem('name')||'null')
+        return window.JSON.parse(localStorage.getItem(name)||'null')
     }
     function createImage(domain){
         var img=tag('img')
