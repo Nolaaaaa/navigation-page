@@ -1,86 +1,33 @@
-*{margin: 0; padding: 0;}
-a{text-decoration: none;}
-body{
-    background: rgba(214, 211, 205) url("https://i.loli.net/2018/08/17/5b765cbe42d6d.jpg") no-repeat center center;   /*除背景外还设置一个背景颜色的作用时使文档在图片加载完成之前不至于单调*/
-    background-size: cover;   /*图片自适应*/
-    
-}
+* { margin: 0; padding: 0;}
+a { text-decoration: none;}
+body { background: rgb(212, 212, 211) url("https://i.loli.net/2018/08/17/5b765cbe42d6d.jpg") no-repeat center center;background-size: cover;}
+
+/* 改变 placeholder 的颜色 */
+::-webkit-input-placeholder {  color: rgb(145, 145, 150); }
+:-moz-placeholder {/* Firefox 18- */  color: rgb(145, 145, 150); }
+::-moz-placeholder{/* Firefox 19+ */ color: rgb(145, 145, 150); }
+:-ms-input-placeholder {  color: rgb(145, 145, 150); }
+
+/* 将默认的“x”隐藏，即删除输入内容的删除按钮 */
+/* input[type="search"]::-webkit-search-cancel-button { display: none; } */
+
 /*整个键盘居中*/
-main{
-    background-color: rgba(0, 0, 0, 0.0);
-    text-align: center;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;     /*div和main高度一样高，main的高度由文档流高度决定即内部的div高度。解决：给main设定高度，100pv即整个屏幕的高度*/
-    margin-top: -40px;
-}
-#main{
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    padding: 10px 18px;
-}
+/*div和main高度一样高，main的高度由文档流高度决定即内部的div高度。解决：给main设定高度，100pv即整个屏幕的高度*/
+main { background-color: rgba(0, 0, 0, 0.0);text-align: center;display: flex; justify-content: center; align-items: center;height: 100vh;  }
+main .wrapper { display: inline-block;background: rgba(255,255,255,0.2);border-radius: 10px;padding: 10px 18px;margin-top: 100px;}
+main .container { display: flex; flex-direction: column; align-items: center; }
+
+/* 搜索框的样式 */
+main .container form { width: 100% }
+main .container input { background: rgba(255,255,255,0.2);border-radius: 10px;background-image: none;border: 1px solid #d1d4dd;box-sizing: border-box;color: #606266;display: inline-block;font-size: inherit;height: 40px;line-height: 40px;outline: none;padding: 0 15px;transition: border-color .2s cubic-bezier(.645,.045,.355,1);width: 100%;}
+main .container input:focus {outline: none;border-color: #409eff;}
 
 /*整排键盘调整位置*/
-#main> div:nth-child(2){margin-left: -22px; }
-#main> div:nth-child(3){margin-left: -72px; }
-
-#main div{
-    text-align: center;
-}
-#main div .key{ 
-    background: linear-gradient(to bottom, #292929 0%,#111111 100%);
-    box-shadow: 0 0 0 1px #1A1B1C,0 0 0 2px #1f2020;  /*双重边框，如果再加0 2px 0 2px #080808; 可以设置底部阴影*/
-    width: 55px;       /*元素的宽度*/
-    line-height: 50px;  /*元素的行高*/
-    position: relative;
-    display: inline-block;
-    cursor: pointer; 
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 1em 0.5em;
-    border-radius: 7px;
-    font-size: 16px;
-    color: #C5C5C5;
-      
-}
-#main div .key img{
-    width: 10px;
-    line-height: 10px;
-    position: absolute;
-    left: 3px;
-    bottom: 3px;
-}
-#main .key botton{
-    display: none;
-    float: left;
-    position: absolute;
-    line-height: 0.5;
-    right: 3px;
-    bottom: 6px;
-    font-size: 2px;
-}
-#main .key:hover{
-    display: inline-block;
-    
-}
-#main .key:hover botton{
-    display: inline-block;
-}
-
-    /*
-.wrapper{
-	background: rgba(255,255,255,0.2);
-	border-radius: 10px;
-}
-.key{width: 50px; height: 40px; background: linear-gradient(to bottom, #292929 0%,#111111 100%); 
-	border: 1px solid #373737; color: #C5C5C5;
-	box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808; 
-	position: relative;
-	font-size: 16px; font-family: Helvetica;}
-.row{margin: 20px; }
-.row .key{margin: 0 10px; }
-.key img{width: 16px; height: 16px; position: absolute; left: 4px; bottom: 2px;}
-.key .text{position: absolute; left: 4px; top: 2px; }
-  */
+main .wrapper> div:nth-child(2) { margin-left: -22px; }
+main .wrapper> div:nth-child(3) { margin-left: -72px; }
+main .wrapper div { text-align: center;}
+main .wrapper .key {  background: linear-gradient(to bottom, #292929 0%,#111111 100%);box-shadow: 0 0 0 1px #1A1B1C,0 0 0 2px #1f2020;  width: 55px;     line-height: 50px;  position: relative;display: inline-block;cursor: pointer; text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;margin: 1em 0.5em;border-radius: 7px;font-size: 16px;color: #C5C5C5;  }
+main .wrapper .key img { width: 10px;line-height: 10px;position: absolute;left: 3px;bottom: 3px;}
+main .wrapper .key botton { display: none;float: left;position: absolute;line-height: 0.5;right: 3px;bottom: 6px;font-size: 2px;}
+main .wrapper .key:hover { display: inline-block;}
+main .wrapper .key:hover botton { display: inline-block;}
