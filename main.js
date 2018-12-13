@@ -73,7 +73,7 @@ window.onload = function () {
     }
     search.onkeypress = function (e) { 
       let  key = e['key'] 
-      if (key == 'Enter') { window.open('https://www.google.com/search?q=' + this.value, '_blank') }
+      if (key == 'Enter' && this.value) { window.open('https://www.google.com/search?q=' + this.value, '_blank') }
 
       // 阻止冒泡
       window.event?window.event.cancelBubble=true:event.stopPropagation()
