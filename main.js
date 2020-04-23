@@ -26,7 +26,7 @@ window.onload = function () {
     var hash = {
       'q': 'weibo.com', 'w': 'alpha.wallhaven.cc', 'e': 'sm.ms', 'r': 'www.y3600.com', 't': 'css-tricks.com', 'y': 'youtube.com', 'u': 'www.yahoo.com', 'i': 'www.imooc.com', 'o': 'www.apple.com', 'p': 'compressjpeg.com',
       'a': 'acfun.tv', 's': 'sohu.com', 'd': 'dribbble.com', 'f': 'fanyi.youdao.com', 'g': 'github.com', 'h': 'st.hujiang.com', 'j': 'js.jirengu.com', 'k': 'www.vip.com', 'l': 'www.taobao.com',
-      'z': 'www.zcool.com.cn', 'x': 'xiedaimala.com', 'c': 'www.cnblogs.com', 'v': 'tympanus.net', 'b': 'explainshell.com', 'n': 'm.panduoduo.net', 'm': 'developer.mozilla.org',
+      'z': 'www.zcool.com.cn', 'x': 'google.com', 'c': 'www.cnblogs.com', 'v': 'tympanus.net', 'b': 'explainshell.com', 'n': 'm.panduoduo.net', 'm': 'developer.mozilla.org',
     }
     // 取出loaclstorage中对应的hash
     var hashInlocalStorage = getFromlocalStorage('website')
@@ -94,7 +94,8 @@ window.onload = function () {
       var bottontarget = e['target']
       var img2 = bottontarget.previousSibling    // 拿到变更的图片的图片
       var key = bottontarget['id']    // 拿到用户点击的按钮
-      var newKey = prompt('请输入一个网址，例如baidu.com')     // 放网址的地方
+      var newKey = prompt('请输入一个网址，例如weibo.com')     // 放网址的地方
+      if(!newKey) return
       hash[key] = newKey            // 把这个值赋值给hash[key]
       localStorage.setItem('website', window.JSON.stringify(hash))
       // 这个API只能存字符串，但是hash不是字符串，所以可以用JSON.stringify(hash)把它变成字符串
