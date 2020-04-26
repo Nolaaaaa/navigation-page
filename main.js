@@ -1,4 +1,9 @@
 window.onload = function () {
+  // loading
+  setTimeout(function(){
+      siteWelcome.classList.remove('active');
+  },1000)
+
   // 1 初始化数据
   var hashA = init()
   var keys = hashA['keys']
